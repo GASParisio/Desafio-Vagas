@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  portal-vagas:
+    # Constrói a imagem usando o Dockerfile da pasta atual
+    build: . 
+    # Nome do container para facilitar identificação
+    container_name: sistema-vagas-container
+    # Mapeia a porta 8080 do seu PC para a porta 80 do container
+    ports:
+      - "8080:80"
+    # Reinicia automaticamente se der erro (opcional, bom para produção)
+    restart: always

@@ -1,0 +1,121 @@
+/* style.css */
+
+/* 1. Importando fonte moderna do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #0d6efd; /* Azul Bootstrap padrão, podemos mudar */
+    --bg-color: #f0f2f5;       /* Cinza bem claro para o fundo */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color) !important;
+    color: #333;
+}
+
+/* 2. Estilo Geral dos Cards (Login, Cadastro e Vagas) */
+.card {
+    border: none !important; /* Remove borda dura */
+    border-radius: 12px !important; /* Arredonda cantos */
+    box-shadow: var(--card-shadow);
+    background-color: #fff;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito ao passar o mouse apenas nos cards de Vagas (dentro da lista) */
+#lista-vagas .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* 3. Centralização das Telas de Login e Cadastro */
+/* Cria uma classe utilitária para centralizar verticalmente */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* 4. Navbar Personalizada */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #1a1e21 !important; /* Dark mode suave */
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* 5. Botões e Inputs */
+.form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+    background-color: #f8f9fa;
+}
+
+.form-control:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 8px 16px;
+}
+
+/* Remove aquele menu <ul> simples do topo, pois vamos usar navbar ou centralizar */
+nav.menu {
+    display: none; 
+}
+
+/* --- ADICIONE ISSO AO FINAL DO SEU STYLE.CSS --- */
+
+/* Estilo para transformar a lista simples em Menu Horizontal */
+nav.menu {
+    background-color: #212529; /* Cor escura (Dark) */
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+nav.menu ul {
+    list-style: none; /* Remove as bolinhas */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Coloca um ao lado do outro */
+    justify-content: center; /* Centraliza */
+    gap: 25px; /* Espaço entre os itens */
+}
+
+nav.menu a {
+    color: #fff; /* Texto branco */
+    text-decoration: none; /* Sem sublinhado */
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav.menu a:hover {
+    color: #0d6efd; /* Azul ao passar o mouse */
+}
+
+/* Ajuste para centralizar o login descontando a altura do menu */
+.auth-wrapper {
+    min-height: calc(100vh - 60px); /* Altura total menos o tamanho do menu */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
